@@ -1,6 +1,6 @@
 package org.example;
 
-public class Thread2 extends Thread{
+public class Thread2 implements Runnable{
     private final Bank bank;
 
     public Thread2(Bank bank) {
