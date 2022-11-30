@@ -9,10 +9,12 @@ public class Thread2 implements Runnable{
 
     @Override
     public void run() {
-        for (int i = 1; i <= 20000; i++) {
-            bank.setAccount(bank.getAccount() - 1);
-        }
+        synchronized (bank) {
+            for (int i = 1; i <= 20000; i++) {
+                bank.setAccount(bank.getAccount() - 1);
+            }
 
-        System.out.println("Thread decrement: " + bank.getAccount());
+            System.out.println("Thread decrement: " + bank.getAccount());
+        }
     }
 }
